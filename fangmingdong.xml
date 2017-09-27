@@ -1,0 +1,16 @@
+<templateSet group="fangmingdong">
+  <template name="actionStart" value="public static void actionStart(Context context){&#10;    Intent intent = new Intent(context, $ACTIVITY$.class);&#10;&#10;    context.startActivity(intent);&#10;}" description="actionStart" toReformat="false" toShortenFQNames="true">
+    <variable name="ACTIVITY" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="adapter" value="public class $MODULE$Adapter extends BaseSimpleRVAdapter&lt;$ENTITY$&gt; {&#10;&#10;    @Override&#10;    public RecyclerView.ViewHolder onCreateVH(ViewGroup parent, int viewType) {&#10;        View view = LayoutInflater.from(mContext).inflate(R.layout.$LAYOUT$, parent, false);&#10;        return new $MODULE$VH(view);&#10;    }&#10;&#10;    @Override&#10;    public void onBind(RecyclerView.ViewHolder viewHolder, int position, List&lt;$ENTITY$&gt; mDatas) {&#10;        $ENTITY$ data = mDatas.get(position);&#10;        $MODULE$VH holder = ($MODULE$VH) viewHolder;&#10;    }&#10;&#10;    public static class $MODULE$VH extends RecyclerView.ViewHolder {&#10;&#10;        public $MODULE$VH(View itemView) {&#10;            super(itemView);&#10;            ButterKnife.bind(this, itemView);&#10;        }&#10;    }&#10;}" description="adapter" toReformat="false" toShortenFQNames="true">
+    <variable name="MODULE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENTITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LAYOUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
